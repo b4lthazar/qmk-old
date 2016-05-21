@@ -34,7 +34,8 @@
 #define PARENS   M(1)             // Insert parens
 #define BRACKS   M(2)             // Insert square brackets
 #define BRACES   M(3)             // Insert curly braces
-#define SLEP     M(4)             // Sleep display on OSX
+#define SLEP     M(4)             // Sleep laptop display on OSX
+#define SLEP2     M(5)            // Sleep display on OSX
 #define PSCR1    LGUI(LSFT(KC_3)) // Print screen on OSX
 #define PSCR2    LGUI(LSFT(KC_4)) // Print screen on OSX with bounding box
 
@@ -76,9 +77,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 
 [_FN] = {
-  {KC_TAB,   ________, ________, PSCR1,    PSCR2,    ________, SLEP,     KC_HOME,  KC_UP,    KC_PGUP,  ________, OOOOOOOO },
-  {OOOOOOOO, ________, ________, ________, ________, ________, ________, KC_LEFT,  KC_DOWN,  KC_RGHT,  ________, BL_MAC   },
-  {OOOOOOOO, ________, ________, ________, ________, RESET,    ________, KC_END,   ________, KC_PGDN,  ________, OOOOOOOO },
+  {KC_TAB,   ________, ________, PSCR1,    PSCR2,    ________, SLEP2,    KC_HOME,  KC_UP,    KC_PGUP,  KC_INS,   OOOOOOOO },
+  {OOOOOOOO, ________, ________, ________, ________, ________, SLEP,     KC_LEFT,  KC_DOWN,  KC_RGHT,  ________, BL_MAC   },
+  {OOOOOOOO, ________, ________, ________, ________, RESET,    ________, KC_END,   ________, KC_PGDN,  KC_DEL,   OOOOOOOO },
   {OOOOOOOO, OOOOOOOO, GO_TO_DL, GO_TO_LW, OOOOOOOO, OOOOOOOO, OOOOOOOO, OOOOOOOO, GO_TO_RS, OOOOOOOO, OOOOOOOO, GO_TO_DL }
 }
 
@@ -151,12 +152,24 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
       }
     break;
 
-    // Lock screen on OSX
+    // Lock laptop screen on OSX
     // For some reason, this has to be a macro, otherwise the keydown and keyup
     // sequence is sometimes off and doesn't work
     // Tried ACTION_MODS_KEY(MOD_LCTL | MOD_LSFT, KC_EJCT) // LCTL(LSFT(KC_EJCT))
     // and it was inconsistent
     case 4:
+      if (record->event.pressed) {
+        return MACRO(
+          D(LSFT),
+          D(LCTL),
+          T(PWR),
+          U(LCTL),
+          U(LSFT),
+        END);
+      }
+    break;
+
+    case 5:
       if (record->event.pressed) {
         return MACRO(
           D(LSFT),

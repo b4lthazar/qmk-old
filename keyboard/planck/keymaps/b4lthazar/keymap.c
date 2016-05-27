@@ -35,7 +35,8 @@
 #define BRACKS   M(2)             // Insert square brackets
 #define BRACES   M(3)             // Insert curly braces
 #define SLEP     M(4)             // Sleep laptop display on OSX
-#define SLEP2     M(5)            // Sleep display on OSX
+#define SLEP2    M(5)             // Sleep display on OSX
+#define FAT_ARR  M(6)             // Inserts () =>
 #define PSCR1    LGUI(LSFT(KC_3)) // Print screen on OSX
 #define PSCR2    LGUI(LSFT(KC_4)) // Print screen on OSX with bounding box
 
@@ -63,7 +64,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 },
 
 [_LW] = {
-  {KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     OOOOOOOO },
+  {KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     FAT_ARR  },
   {OOOOOOOO, KC_UNDS,  KC_PLUS,  KC_LCBR,  KC_RCBR,  KC_PIPE,  ________, KC_MINS,  KC_EQL,   KC_LBRC,  KC_RBRC,  KC_BSLS  },
   {OOOOOOOO, KC_TILD,  ________, ________, ________, ________, ________, KC_GRV,   OOOOOOOO, OOOOOOOO, OOOOOOOO, OOOOOOOO },
   {OOOOOOOO, OOOOOOOO, GO_TO_FN, GO_TO_DL, OOOOOOOO, OOOOOOOO, OOOOOOOO, OOOOOOOO, GO_TO_RS, OOOOOOOO, OOOOOOOO, GO_TO_DL }
@@ -169,6 +170,7 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
       }
     break;
 
+    // Sleep monitor in OSX
     case 5:
       if (record->event.pressed) {
         return MACRO(
@@ -177,6 +179,24 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt) {
           T(EJCT),
           U(LCTL),
           U(LSFT),
+        END);
+      }
+    break;
+
+    // Type parens followed by fat arrow
+    case 6:
+      if (record->event.pressed) {
+        return MACRO(
+          D(LSFT),
+          T(9),
+          T(0),
+          U(LSFT),
+          T(SPC),
+          T(EQL),
+          D(LSFT),
+          T(DOT),
+          U(LSFT),
+          T(SPC),
         END);
       }
     break;

@@ -28,9 +28,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BL] = KEYMAP(
   LT(_FL, KC_NLCK), KC_PSLS, KC_PAST, KC_PMNS, \
   KC_P7,            KC_P8,   KC_P9,   KC_PPLS, \
-  KC_P4,            KC_P5,   KC_P6, \
+  KC_P4,            KC_P5,   KC_P6,   KC_PPLS, \
   KC_P1,            KC_P2,   KC_P3,   KC_PENT, \
-  KC_P0,                     KC_PDOT),
+  KC_P0,            KC_P0,   KC_PDOT, KC_PENT),
 
   /* Keymap _FL: Function Layer
    * .-------------------.
@@ -48,9 +48,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_FL] = KEYMAP(
   LT(_FL, KC_NLCK), KC_TRNS, KC_TRNS, F(0), \
   KC_TRNS,          F(4),    KC_TRNS, F(6), \
-  F(3),             BL_STEP, F(2), \
+  F(3),             BL_STEP, F(2),    F(6), \
   KC_TRNS,          F(5),    KC_TRNS, F(7), \
-  F(1),                      KC_TRNS)
+  F(1),             F(1),    KC_TRNS, F(7))
 };
 
 enum function_id {

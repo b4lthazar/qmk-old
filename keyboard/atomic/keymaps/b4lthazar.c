@@ -14,6 +14,9 @@
 
 #define _DL _QW // DEFAULT LAYER
 
+
+#define _RSHT_ESC 4
+
 // Some aliases just for clarity
 #define ________ KC_NO
 #define OOOOOOOO KC_TRNS
@@ -28,6 +31,7 @@
 //------------------------------------------------------------------------------
 
 #define SHFT_ESC SFT_T(KC_ESC)    // Hold for shift, tap for escape
+#define RSHT_ESC F(_RSHT_ESC)     // Hold for right shift, tap for escape
 #define BL_MAC   M(0)             // Backlight macro is macro 0
 #define PARENS   M(1)             // Insert parens
 #define BRACKS   M(2)             // Insert square brackets
@@ -58,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   {________, ________, ________, ________, ________, ________, KC_7,     KC_8,     KC_9,     ________, ________, ________, ________, ________, ________ },
   {KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_4,     KC_5,     KC_6,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     PARENS   },
   {KC_BSPC,  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_1,     KC_2,     KC_3,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT  },
-  {SHFT_ESC, KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_0,     KC_PLUS,  KC_MINS,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  SHFT_ESC },
+  {SHFT_ESC, KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_0,     KC_PLUS,  KC_MINS,  KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  RSHT_ESC },
   {KC_LCTL,  KC_LOPT,  MO_TG_FN, MO_TG_LW, KC_LCMD,  KC_SPC,   KC_DOT,   KC_ASTR,  KC_SLSH,  KC_SPC,   KC_ENT,   MO_TG_RS, BRACKS,   BRACES,   ________ }
 },
 
@@ -102,7 +106,8 @@ const uint16_t PROGMEM fn_actions[] = {
   //   define MO_TG_LW ACTION_LAYER_TAP_TOGGLE(_LW)
   [_LW] = ACTION_LAYER_TAP_TOGGLE(_LW),
   [_RS] = ACTION_LAYER_TAP_TOGGLE(_RS),
-  [_FN] = ACTION_LAYER_TAP_TOGGLE(_FN)
+  [_FN] = ACTION_LAYER_TAP_TOGGLE(_FN),
+  [_RSHT_ESC] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_ESC)
 
 };
 

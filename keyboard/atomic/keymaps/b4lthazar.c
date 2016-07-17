@@ -11,9 +11,7 @@
 #define _LW 1 // LOWERED
 #define _RS 2 // RAISED
 #define _FN 3 // FUNCTION LAYER
-
 #define _DL _QW // DEFAULT LAYER
-
 
 #define _RSHT_ESC 4
 

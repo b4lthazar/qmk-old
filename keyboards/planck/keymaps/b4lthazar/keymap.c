@@ -19,7 +19,7 @@
 
 // Some aliases just for clarity
 #define ________ KC_NO
-#define OOOOOOOO KC_TRNS
+#define XXXXXXXX KC_TRNS
 #define KC_LCMD  KC_LGUI
 #define KC_RCMD  KC_RGUI
 #define KC_LOPT  KC_LALT
@@ -67,23 +67,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [_LW] = {
   {KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     FAT_ARR  },
-  {OOOOOOOO, KC_UNDS,  KC_PLUS,  KC_LCBR,  KC_RCBR,  KC_PIPE,  ________, KC_MINS,  KC_EQL,   KC_LBRC,  KC_RBRC,  KC_BSLS  },
-  {OOOOOOOO, KC_TILD,  ________, ________, ________, ________, ________, KC_GRV,   OOOOOOOO, OOOOOOOO, OOOOOOOO, OOOOOOOO },
-  {OOOOOOOO, OOOOOOOO, GO_TO_FN, GO_TO_DL, OOOOOOOO, OOOOOOOO, OOOOOOOO, OOOOOOOO, GO_TO_RS, OOOOOOOO, OOOOOOOO, GO_TO_DL }
+  {XXXXXXXX, KC_UNDS,  KC_PLUS,  KC_LCBR,  KC_RCBR,  KC_PIPE,  ________, KC_MINS,  KC_EQL,   KC_LBRC,  KC_RBRC,  KC_BSLS  },
+  {XXXXXXXX, KC_TILD,  ________, ________, ________, ________, ________, KC_GRV,   XXXXXXXX, XXXXXXXX, XXXXXXXX, XXXXXXXX },
+  {XXXXXXXX, XXXXXXXX, GO_TO_FN, GO_TO_DL, XXXXXXXX, XXXXXXXX, XXXXXXXX, XXXXXXXX, GO_TO_RS, XXXXXXXX, XXXXXXXX, GO_TO_DL }
 },
 
 [_RS] = {
-  {KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,  KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  OOOOOOOO },
-  {OOOOOOOO, KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_UNDS,  KC_PLUS,  KC_LCBR,  KC_RCBR,  KC_PIPE  },
-  {OOOOOOOO, KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_TILD,  OOOOOOOO, OOOOOOOO, OOOOOOOO, OOOOOOOO },
-  {OOOOOOOO, OOOOOOOO, GO_TO_FN, GO_TO_LW, OOOOOOOO, OOOOOOOO, OOOOOOOO, OOOOOOOO, GO_TO_DL, OOOOOOOO, OOOOOOOO, GO_TO_DL }
+  {KC_TILD,  KC_EXLM,  KC_AT,    KC_HASH,  KC_DLR,   KC_PERC,  KC_CIRC,  KC_AMPR,  KC_ASTR,  KC_LPRN,  KC_RPRN,  XXXXXXXX },
+  {XXXXXXXX, KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_UNDS,  KC_PLUS,  KC_LCBR,  KC_RCBR,  KC_PIPE  },
+  {XXXXXXXX, KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,   KC_F12,   KC_TILD,  XXXXXXXX, XXXXXXXX, XXXXXXXX, XXXXXXXX },
+  {XXXXXXXX, XXXXXXXX, GO_TO_FN, GO_TO_LW, XXXXXXXX, XXXXXXXX, XXXXXXXX, XXXXXXXX, GO_TO_DL, XXXXXXXX, XXXXXXXX, GO_TO_DL }
 },
 
 [_FN] = {
-  {KC_TAB,   ________, ________, PSCR1,    PSCR2,    ________, SLEP2,    KC_HOME,  KC_UP,    KC_PGUP,  KC_INS,   OOOOOOOO },
-  {OOOOOOOO, ________, ________, ________, ________, ________, SLEP,     KC_LEFT,  KC_DOWN,  KC_RGHT,  ________, BL_MAC   },
-  {OOOOOOOO, ________, ________, ________, ________, RESET,    ________, KC_END,   ________, KC_PGDN,  KC_DEL,   OOOOOOOO },
-  {OOOOOOOO, OOOOOOOO, GO_TO_DL, GO_TO_LW, OOOOOOOO, OOOOOOOO, OOOOOOOO, OOOOOOOO, GO_TO_RS, OOOOOOOO, OOOOOOOO, GO_TO_DL }
+  {KC_TAB,   ________, ________, PSCR1,    PSCR2,    ________, SLEP2,    KC_HOME,  KC_UP,    KC_PGUP,  KC_INS,   XXXXXXXX },
+  {XXXXXXXX, ________, ________, ________, ________, ________, SLEP,     KC_LEFT,  KC_DOWN,  KC_RGHT,  ________, BL_MAC   },
+  {XXXXXXXX, ________, ________, ________, ________, RESET,    ________, KC_END,   ________, KC_PGDN,  KC_DEL,   XXXXXXXX },
+  {XXXXXXXX, XXXXXXXX, GO_TO_DL, GO_TO_LW, XXXXXXXX, XXXXXXXX, XXXXXXXX, XXXXXXXX, GO_TO_RS, XXXXXXXX, XXXXXXXX, GO_TO_DL }
 }
 
 };
